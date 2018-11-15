@@ -1,11 +1,11 @@
-FROM frolvlad/alpine-python3
+FROM python:3-alpine
 
 MAINTAINER Chad Bailey <chadbailey.me>
 
 WORKDIR /helloworld
 COPY ./src /helloworld
 
-RUN apk add --no-cache gcc musl-dev libev-dev python3-dev
+RUN apk add --no-cache gcc musl-dev libev-dev
 RUN pip install -r requirements.txt
 
 EXPOSE 80
